@@ -1,0 +1,57 @@
+.banniere {
+    /* width: 100%; */
+    margin-top: 18vh;
+}
+
+
+.corps {
+    background-color: #FFF3DD;
+}
+
+.inside {
+    background-color: white;
+    width: 90% !important;
+}
+.contenu {
+    height: 100%;
+    padding-top: 3%;
+}
+
+.card {
+    width: 80%;
+    max-width: 300px !important;
+    /* margin: 1em; */
+    border: none !important;
+}
+
+
+.card-body {
+    background-color: #FFF3DD;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: wheat !important;
+    color: black;
+    border: none !important;
+}
+
+@media screen and (min-width:768px) {
+    .card-img-top {
+        max-height: 17vh;
+    }
+}
+
+@media screen and (min-width:992px) {
+
+    .banniere {
+        margin-top: 0;
+        height: 50vh !important;
+        object-fit: cover;
+        object-position: 0px 36%;
+    }
+
+    .card-img-top {
+        max-height: 17vh;
+    }
+    
+}
