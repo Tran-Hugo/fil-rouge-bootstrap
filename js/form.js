@@ -16,7 +16,18 @@ let motDePasseValid = true;
 let motDePasseConfirm = document.querySelector('.form-control.motDePasseConfirm');
 let motDePasseConfirmValid = true;
 const emailReg = document.querySelector('.password');
+const regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const errorEmail = document.querySelector('.error.email');
 
+email.addEventListener('input',function(){
+    if(regEmail.test(email.value)==false){
+        errorEmail.classList.add('d-block');
+        errorEmail.classList.remove('d-none');
+    } else {
+        errorEmail.classList.add('d-none');
+        errorEmail.classList.remove('d-block');
+    }
+});
 
 
 adresse.addEventListener('blur',function(){
@@ -49,8 +60,6 @@ button.addEventListener('click', function(event){
     const errorVille = document.querySelector('.error.ville');
     const errorCodePostal = document.querySelector('.error.cp');
     const errorCodePostal2 = document.querySelector('.error.cp2');
-    const regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const errorEmail = document.querySelector('.error.email');
     const regPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{8,})");
     const errorPassword = document.querySelector('.error.confirmPassword');
     
@@ -127,13 +136,11 @@ button.addEventListener('click', function(event){
     if (email.value =='' || regEmail.test(email.value)==false) {
         email.classList.add('is-invalid');
         emailValid = false;
-        errorEmail.classList.add('d-block');
-        errorEmail.classList.remove('d-none');
+        
     } else {
         email.classList.remove('is-invalid');
         emailValid = true;
-        errorEmail.classList.add('d-none');
-        errorEmail.classList.remove('d-block');
+        
     }
 
     if (regPassword.test(motDePasse.value)==false) {
