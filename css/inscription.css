@@ -3,7 +3,7 @@ main {
 }
 
 .titre {
-    border-bottom: 2vh solid #FFF3DD;
+    height: 7vh;
 }
 
 h2 {
@@ -16,9 +16,48 @@ h2 {
 
 .formulaire {
     background-color: white;
+    border-radius: 20px;
 }
 
 .btn-primary {
     background-color: #31aaaf !important;
     border-color: #31aaaf !important;
+}
+
+.error {
+    color:red;
+    margin-top: 1vh;
+}
+
+.error.adresse {
+    color: #31aaaf;
+}
+
+.error.password {
+    color:#31aaaf;
+}
+
+@media screen and (min-width:768px) {
+    
+    h2 {
+        font-size: 3em;
+    }
+    
+    .form-label {
+        font-size: 1.5em;
+    }
+    .inscrire {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width:992px) {
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    main {
+        margin-top: unset;
+    }
 }
